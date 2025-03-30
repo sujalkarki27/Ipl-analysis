@@ -12,82 +12,83 @@ print(df.columns)       # Display column names
 print(df.info())       # Display dataframe info
 print(df.shape)      # Display shape of dataframe
 
-# # Grouping by batsman to get total runs
-# batsman = df.groupby("batsman")["batsman_runs"].sum()
+# Grouping by batsman to get total runs
+batsman = df.groupby("batsman")["batsman_runs"].sum()
 
-# # Sorting in descending order and getting the top 15 scorers
-# runs = batsman.sort_values(ascending=False).head(15)
+# Sorting in descending order and getting the top 15 scorers
+runs = batsman.sort_values(ascending=False).head(15)
 
-# #plotting the bar graph for most runs scored 
-# plt.figure(figsize=(15,6))
-# sns.barplot(x=runs.index,y=runs,color="Red")
-# plt.xticks(rotation=90)
-# plt.title("Most Runs scored in the history of IPL",fontweight="bold")
-# plt.xlabel("Players name",fontweight="bold")
-# plt.ylabel("Runs Scored",fontweight="bold")
+#plotting the bar graph for most runs scored 
+plt.figure(figsize=(15,6))
+sns.barplot(x=runs.index,y=runs,color="Red")
+plt.xticks(rotation=90)
+plt.title("Most Runs scored in the history of IPL",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("Runs Scored",fontweight="bold")
 
-# plt.show()
-
-
-#  # _____________Most 4's Hit in IPL______________
-
-# #checking how many runs scored by the batsman using 6
-# boundry_4=df.groupby("batsman")["batsman_runs"].agg(lambda x: ((x==4) .sum()))
-
-# #sorting in descending order and extracting the first 15 players to hit most 4's
-# run = boundry_4.sort_values(ascending=False).head(15)
-
-# #plotting the bar graph for most 4's hit 
-# plt.figure(figsize=(15,6))
-# sns.barplot(x=run.index,y=run,color="royalblue")
-# plt.xticks(rotation=90)
-# plt.title("Player who hit the most no. of 4's",fontweight="bold")
-# plt.xlabel("Players name",fontweight="bold")
-# plt.ylabel("No. of 4's",fontweight="bold")
-
-# plt.show()
+plt.show()
 
 
-# # # _____________Most 6's Hit in IPL______________
+ # _____________Most 4's Hit in IPL______________
 
-# #checking how many runs scored by the batsman using 6
-# boundry_6=df.groupby("batsman")["batsman_runs"].agg(lambda x :((x==4) .sum()))
+#checking how many runs scored by the batsman using 6
+boundry_4=df.groupby("batsman")["batsman_runs"].agg(lambda x: ((x==4) .sum()))
 
-# #sorting in descending order and extracting the first 15 players to hit most 4's
-# run6=boundry_6.sort_values(ascending=False).head(15)
+#sorting in descending order and extracting the first 15 players to hit most 4's
+run = boundry_4.sort_values(ascending=False).head(15)
 
+#plotting the bar graph for most 4's hit 
+plt.figure(figsize=(15,6))
+sns.barplot(x=run.index,y=run,color="royalblue")
+plt.xticks(rotation=90)
+plt.title("Player who hit the most no. of 4's",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("No. of 4's",fontweight="bold")
 
-# #plotting the bar graph for most 6's hit
-
-# plt.figure(figsize=(15,6))
-# sns.barplot(x=run6.index,y=run6,color="violet")
-# plt.xticks(rotation=90)
-# plt.title("Player who hit the most no. of 6's",fontweight="bold")
-# plt.xlabel("Players name",fontweight="bold")
-# plt.ylabel("No. of 6's",fontweight="bold")
-
-# plt.show()
+plt.show()
 
 
-# #  ________Who has faced the most no. of dot balls in the IPL history so far______
+# # _____________Most 6's Hit in IPL______________
 
-# #checking how many runs scored by the batsman using 0
-# dotball =df.groupby("batsman")["batsman_runs"].agg(lambda x:((x==0).sum()))
+#checking how many runs scored by the batsman using 6
+boundry_6=df.groupby("batsman")["batsman_runs"].agg(lambda x :((x==4) .sum()))
 
-# #sorting in descending order and extracting the first 15 players who faced most dot balls
-# dot =dotball.sort_values(ascending=False).head(15)
-# print(dot)
+#sorting in descending order and extracting the first 15 players to hit most 4's
+run6=boundry_6.sort_values(ascending=False).head(15)
 
-# #plotting the bar graph for most dot balls faced 
-# plt.figure(figsize=(15,6))
-# sns.barplot(x=dot.index,y=dot.values,color="yellow")
-# plt.xticks(rotation=90)
-# plt.title("Player who faced the most no. of dot balls",fontweight="bold")
-# plt.xlabel("Players name",fontweight="bold")
-# plt.ylabel("No. of dot balls",fontweight="bold")
 
-# plt.show()
+#plotting the bar graph for most 6's hit
 
+plt.figure(figsize=(15,6))
+sns.barplot(x=run6.index,y=run6,color="violet")
+plt.xticks(rotation=90)
+plt.title("Player who hit the most no. of 6's",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("No. of 6's",fontweight="bold")
+
+plt.show()
+
+
+#  ________Who has faced the most no. of dot balls in the IPL history so far______
+
+#checking how many runs scored by the batsman using 0
+dotball =df.groupby("batsman")["batsman_runs"].agg(lambda x:((x==0).sum()))
+
+#sorting in descending order and extracting the first 15 players who faced most dot balls
+dot =dotball.sort_values(ascending=False).head(15)
+print(dot)
+
+#plotting the bar graph for most dot balls faced 
+plt.figure(figsize=(15,6))
+sns.barplot(x=dot.index,y=dot.values,color="yellow")
+plt.xticks(rotation=90)
+plt.title("Player who faced the most no. of dot balls",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("No. of dot balls",fontweight="bold")
+
+plt.show()
+
+# __________________Player with highest strike rate_________________
 # Load the dataset
 df = pd.read_csv("/Users/sujalkarki/Desktop/python learning/deliveries.csv")
 
@@ -104,8 +105,30 @@ total_balls.rename(columns={"batsman": "batsman_name", "ball": "total_balls_face
 # Performing an outer merge
 test = batsman.merge(total_balls, how="outer", on="batsman_name")
 
+#creating a new column strike rate and storing the strike rate of the players 
+test["strike_rate"]=(test["batsman_runs"]/test["total_balls_faced"])*100
+
 # Display final dataset
-print(test)
+print(test.describe())
+
+#rounding the strike rate column upto 2 decimal places
+test["strike_rate"]=test["strike_rate"].round(2)
+
+#sorting the strike rate column and extracting top 20 strike rate
+test.sort_values(by=["strike_rate"],ascending=False).head(20)
+
+#sorting the strike rate column by a condition that the batter must have faced more than 200 delivery 
+test1=test[test["total_balls_faced"]>200].sort_values(by=["strike_rate"],ascending=False).head(20).reset_index(drop=True)
+
+#plotting the strike rate after applying the condition
+plt.figure(figsize=(15,6))
+sns.barplot(data=test1,x="strike_rate",y="batsman_name")
+plt.xticks(rotation=90)
+plt.title("Player with highest strike rate after facing more than 200 balls",fontweight="bold")
+plt.xlabel("Strike Rate",fontweight="bold")
+plt.ylabel("Players name",fontweight="bold")
+
+plt.show()
 
 
 
