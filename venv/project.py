@@ -88,27 +88,24 @@ print(df.shape)      # Display shape of dataframe
 
 # plt.show()
 
+# Load the dataset
+df = pd.read_csv("/Users/sujalkarki/Desktop/python learning/deliveries.csv")
+
 # Grouping by batsman and summing their total runs
-batsman = df.groupby("batsman")["batsman_runs"].sum()
+batsman = df.groupby("batsman")["batsman_runs"].sum().reset_index()
 
-# Converting it into a DataFrame
-df = pd.DataFrame(batsman).reset_index()
+# Renaming for clarity
+batsman.rename(columns={"batsman": "batsman_name"}, inplace=True)
 
-# Renaming the column for clarity
-df.rename(columns={"batsman": "batsman_name"}, inplace=True)
+# Counting total balls faced by each batsman
+total_balls = df.groupby("batsman")["ball"].count().reset_index()
+total_balls.rename(columns={"batsman": "batsman_name", "ball": "total_balls_faced"}, inplace=True)
 
-# Counting the total balls played by each batsman
-total_balls = df["batsman_name"].value_counts()
+# Performing an outer merge
+test = batsman.merge(total_balls, how="outer", on="batsman_name")
 
-# Converting it into a DataFrame
-df1 = pd.DataFrame(total_balls).reset_index()
-
-# Renaming columns
-df1.rename(columns={"index": "batsman_name", "batsman_name": "total_balls_faced"}, inplace=True)
-
-print(df1.columns)
-
-
+# Display final dataset
+print(test)
 
 
 
