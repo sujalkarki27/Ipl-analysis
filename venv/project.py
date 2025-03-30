@@ -122,12 +122,52 @@ test1=test[test["total_balls_faced"]>200].sort_values(by=["strike_rate"],ascendi
 
 #plotting the strike rate after applying the condition
 plt.figure(figsize=(15,6))
-sns.barplot(data=test1,x="strike_rate",y="batsman_name")
+sns.barplot(data=test1,x="strike_rate",y="batsman_name",palette="autumn")
 plt.xticks(rotation=90)
 plt.title("Player with highest strike rate after facing more than 200 balls",fontweight="bold")
 plt.xlabel("Strike Rate",fontweight="bold")
 plt.ylabel("Players name",fontweight="bold")
 
+plt.show()
+
+# ............................Bowling Analysis .................................
+
+# # ________________Most Balls Through Player in  IPL___________________
+balls= df.groupby("bowler")["ball"].count()
+balls_through=balls.sort_values(ascending=False).head(15)
+
+#plotting the bowlers with the most no. of balls
+plt.figure(figsize=(15,6))
+sns.barplot(x=balls_through.index,y=balls_through,color="lightgreen")
+plt.xticks(rotation=90)
+plt.title("Player who Through the most no. of balls",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("No. of balls",fontweight="bold")
+
+
+
+# ____________Most wicket takers in IPL_____________
+# Filtering out dismissals that count as wickets (excluding 'run out' and 'retired hurt')
+valid_dismissals = ["bowled", "caught", "lbw", "stumped", "caught and bowled", "hit wicket"]
+
+# Counting wickets for each bowler
+wickets = df[df["dismissal_kind"].isin(valid_dismissals)].groupby("bowler")["dismissal_kind"].count().reset_index()
+
+# Renaming columns
+wickets.rename(columns={"dismissal_kind": "total_wickets"}, inplace=True)
+
+# Sorting by most wickets
+wickets = wickets.sort_values(by="total_wickets", ascending=False).reset_index(drop=True)
+
+# Display the top 20 wicket-takers
+print(wickets.head(20))
+
+# Plot the top 20 wicket-takers
+plt.figure(figsize=(15,6))
+sns.barplot(data=wickets.head(20), x="total_wickets", y="bowler", palette="viridis")
+plt.xlabel("Total Wickets", fontweight="bold")
+plt.ylabel("Bowler", fontweight="bold")
+plt.title("Top 20 Wicket-Takers in IPL History", fontweight="bold")
 plt.show()
 
 
