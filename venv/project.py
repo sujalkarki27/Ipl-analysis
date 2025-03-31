@@ -130,6 +130,7 @@ plt.ylabel("Players name",fontweight="bold")
 
 plt.show()
 
+
 # ............................Bowling Analysis .................................
 
 # # ________________Most Balls Through Player in  IPL___________________
@@ -144,11 +145,9 @@ plt.title("Player who Through the most no. of balls",fontweight="bold")
 plt.xlabel("Players name",fontweight="bold")
 plt.ylabel("No. of balls",fontweight="bold")
 
-
-
 # ____________Most wicket takers in IPL_____________
 # Filtering out dismissals that count as wickets (excluding 'run out' and 'retired hurt')
-valid_dismissals = ["bowled", "caught", "lbw", "stumped", "caught and bowled", "hit wicket"]
+valid_dismissals = ["bowler", "caught", "lbw", "stumped", "caught and bowled", "hit wicket"]
 
 # Counting wickets for each bowler
 wickets = df[df["dismissal_kind"].isin(valid_dismissals)].groupby("bowler")["dismissal_kind"].count().reset_index()
@@ -169,6 +168,3 @@ plt.xlabel("Total Wickets", fontweight="bold")
 plt.ylabel("Bowler", fontweight="bold")
 plt.title("Top 20 Wicket-Takers in IPL History", fontweight="bold")
 plt.show()
-
-
-
