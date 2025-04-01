@@ -22,7 +22,7 @@ runs = batsman.sort_values(ascending=False).head(15)
 plt.figure(figsize=(15,6))
 sns.barplot(x=runs.index,y=runs,color="Red")
 plt.xticks(rotation=90)
-plt.title("Most Runs scored in the history of IPL",fontweight="bold")
+plt.title("Most Runs scored in the history of IPL   ",fontweight="bold")
 plt.xlabel("Players name",fontweight="bold")
 plt.ylabel("Runs Scored",fontweight="bold")
 
@@ -51,7 +51,7 @@ plt.show()
 # # _____________Most 6's Hit in IPL______________
 
 #checking how many runs scored by the batsman using 6
-boundry_6=df.groupby("batsman")["batsman_runs"].agg(lambda x :((x==4) .sum()))
+boundry_6=df.groupby("batsman")["batsman_runs"].agg(lambda x :((x==6) .sum()))
 
 #sorting in descending order and extracting the first 15 players to hit most 4's
 run6=boundry_6.sort_values(ascending=False).head(15)
