@@ -89,8 +89,6 @@ plt.ylabel("No. of dot balls",fontweight="bold")
 plt.show()
 
 # __________________Player with highest strike rate_________________
-# Load the dataset
-df = pd.read_csv("/Users/sujalkarki/Desktop/python learning/deliveries.csv")
 
 # Grouping by batsman and summing their total runs
 batsman = df.groupby("batsman")["batsman_runs"].sum().reset_index()
