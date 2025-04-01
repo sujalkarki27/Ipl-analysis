@@ -166,3 +166,32 @@ plt.xlabel("Total Wickets", fontweight="bold")
 plt.ylabel("Bowler", fontweight="bold")
 plt.title("Top 20 Wicket-Takers in IPL History", fontweight="bold")
 plt.show()
+
+# ______________Most no. of extra  in IPL_____________
+#counting the total no. of extras bowled by the bowler
+extras=df.groupby("bowler")["extra_runs"].agg(lambda x: (x>0).sum())
+#sorting in descending order and extracting the first 15 bowlers who gave the most no. of extras
+extra_balls=extras.sort_values(ascending=False).head(15)
+
+#plotting the bowlers who gave the most no. extra runs 
+plt.figure(figsize=(15,6))
+sns.barplot(x=extra_balls.index,y=extra_balls,color="blue")
+plt.xticks(rotation=90)
+plt.title("Player who gave the most no. of extras",fontweight="bold")
+plt.xlabel("Players name",fontweight="bold")
+plt.ylabel("Total extra runs",fontweight="bold")
+
+plt.show()
+
+# ________________Most Common Mode of Dismissal in IPL 
+df['dismissal_kind'].value_counts()
+
+#plotting the most common mode of dismissal in the form of bar plot
+plt.figure(figsize=(15,6))
+sns.countplot(df['dismissal_kind'],color="orange")
+plt.xticks(rotation=90)
+plt.title("Most common mode of dismissal",fontweight="bold")
+plt.xlabel("Dismissal mode",fontweight="bold")
+plt.ylabel("Count",fontweight="bold")
+
+plt.show()
