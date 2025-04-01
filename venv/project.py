@@ -6,7 +6,7 @@ import seaborn as sns
 # # _____________Most Runs Scored in IPL______________
 
 # Load the CSV file
-df = pd.read_csv("/Users/sujalkarki/Desktop/python learning/deliveries.csv")
+df = pd.read_csv("/Users/sujalkarki/Desktop/data Science/deliveries.csv")
 print(df.head(10))      # Display the first 10 rows
 print(df.columns)       # Display column names
 print(df.info())       # Display dataframe info
