@@ -195,3 +195,4 @@ plt.xlabel("Dismissal mode",fontweight="bold")
 plt.ylabel("Count",fontweight="bold")
 
 plt.show()
+
