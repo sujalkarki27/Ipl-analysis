@@ -196,3 +196,7 @@ plt.ylabel("Count",fontweight="bold")
 
 plt.show()
 
+# ________________Run Distribution per Ball (Bar Chart)___________
+runn = df['total_runs'].value_counts()
+run_dis=runn.sort_values(ascending=False)
+
