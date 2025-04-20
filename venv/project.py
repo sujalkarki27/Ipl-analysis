@@ -200,3 +200,8 @@ plt.show()
 runn = df['total_runs'].value_counts()
 run_dis=runn.sort_values(ascending=False)
 
+# Create Bar Plot
+plt.figure(figsize=(10, 6))
+sns.barplot(x=run_dis.index, y=run_dis.values, palette='muted')
+plt.title('Run Distribution per Ball', fontsize=16)
+
