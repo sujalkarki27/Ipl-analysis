@@ -204,4 +204,8 @@ run_dis=runn.sort_values(ascending=False)
 plt.figure(figsize=(10, 6))
 sns.barplot(x=run_dis.index, y=run_dis.values, palette='muted')
 plt.title('Run Distribution per Ball', fontsize=16)
+plt.xlabel('Runs', fontsize=12)
+plt.ylabel('Count', fontsize=12)
+plt.show()
+
 
