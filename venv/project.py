@@ -12,6 +12,7 @@ print(df.columns)       # Display column names
 print(df.info())       # Display dataframe info
 print(df.shape)      # Display shape of dataframe
 
+
 # Grouping by batsman to get total runs
 batsman = df.groupby("batsman")["batsman_runs"].sum()
 
