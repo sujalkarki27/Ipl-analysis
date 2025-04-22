@@ -209,4 +209,9 @@ plt.xlabel('Runs', fontsize=12)
 plt.ylabel('Count', fontsize=12)
 plt.show()
 
+# Grouping by batting team to get total runs
+teams = df.groupby("batting_team")["total_runs"].sum()
+
+
+
 
