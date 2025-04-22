@@ -211,6 +211,9 @@ plt.show()
 
 # Grouping by batting team to get total runs
 teams = df.groupby("batting_team")["total_runs"].sum()
+# Sorting in descending order
+team_runs = teams.sort_values(ascending=False)
+
 
 
 
