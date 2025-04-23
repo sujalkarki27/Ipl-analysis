@@ -214,6 +214,16 @@ teams = df.groupby("batting_team")["total_runs"].sum()
 # Sorting in descending order
 team_runs = teams.sort_values(ascending=False)
 
+# Plotting the bar graph for total runs scored by teams
+plt.figure(figsize=(15,6))
+sns.barplot(x=team_runs.index, y=team_runs.values, palette="coolwarm")
+plt.xticks(rotation=45)
+plt.title("Total Runs Scored by IPL Teams", fontweight="bold")
+plt.xlabel("Team", fontweight="bold")
+plt.ylabel("Total Runs", fontweight="bold")
+plt.show()
+
+
 
 
 
