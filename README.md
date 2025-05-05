@@ -29,3 +29,15 @@ This repository aims to:
 
 ---
 
+## 📂 Dataset Description
+
+The analysis is based on IPL datasets including:
+
+- `deliveries.csv` — Ball-by-ball delivery-level data
+- `matches.csv` *(You can add this if applicable)* — Match-level summary
+
+---
+
+
+
+
