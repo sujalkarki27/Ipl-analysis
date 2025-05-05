@@ -39,5 +39,18 @@ The analysis is based on IPL datasets including:
 ---
 
 
+## 📷 Sample Visualizations
+
+Here are a few types of visualizations used:
+
+- 🏆 Win percentages of teams across seasons
+- 🧢 Top players with most runs/wickets
+- 🏟️ Toss decisions and their outcomes
+- 📉 Run rate trends across overs
+
+---
+
+
+
 
 
