@@ -50,6 +50,15 @@ Here are a few types of visualizations used:
 
 ---
 
+## 📁 Project Structure
+
+```bash
+Ipl-analysis/
+├── deliveries.csv
+├── venv/                   # Virtual environment
+├── analysis.ipynb          # Main analysis notebook
+└── README.md               # Project documentation
+
 
 
 
