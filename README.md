@@ -17,3 +17,15 @@ This repository aims to:
 - 🧠 Improve understanding of cricket dynamics through **data storytelling**
 - 💡 Enhance data analytics and Python skills
 
+- ---
+
+## 🛠️ Tech Stack
+
+- 🐍 Python
+- 📘 Pandas
+- 🟦 Matplotlib
+- 🌊 Seaborn
+- 📁 Jupyter Notebook (for visualization and analysis)
+
+---
+
