@@ -12,10 +12,10 @@ Welcome to the **IPL Data Analysis Project**! This project dives deep into the e
 
 This repository aims to:
 
-- 📊 Perform **exploratory data analysis (EDA)** on IPL datasets
-- 📈 Visualize trends using **Matplotlib** and **Seaborn**
-- 🧠 Improve understanding of cricket dynamics through **data storytelling**
-- 💡 Enhance data analytics and Python skills
+- 📊 Perform **exploratory data analysis (EDA)** on IPL datasets.
+- 📈 Visualize trends using **Matplotlib** and **Seaborn**.
+- 🧠 Improve understanding of cricket dynamics through **data storytelling**.
+- 💡 Enhance data analytics and Python skills.
 
 - ---
 
