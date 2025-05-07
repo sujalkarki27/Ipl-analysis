@@ -21,11 +21,11 @@ This repository aims to:
 
 ## 🛠️ Tech Stack
 
-- 🐍 Python
-- 📘 Pandas
-- 🟦 Matplotlib
-- 🌊 Seaborn
-- 📁 Jupyter Notebook (for visualization and analysis)
+- 🐍 Python.
+- 📘 Pandas.
+- 🟦 Matplotlib.
+- 🌊 Seaborn.
+- 📁 Jupyter Notebook (for visualization and analysis).
 
 ---
 
